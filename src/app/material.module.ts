@@ -13,7 +13,10 @@ import { MatButtonModule,
     MatCardModule,
     MatSelectModule,
     MatProgressSpinnerModule,
-    MatDialogModule} from '@angular/material';
+    MatDialogModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule} from '@angular/material';
 
 const MAT_IMPORTS = [MatButtonModule,
                     MatIconModule,
@@ -29,7 +32,10 @@ const MAT_IMPORTS = [MatButtonModule,
                     MatCardModule,
                     MatSelectModule,
                     MatProgressSpinnerModule,
-                    MatDialogModule
+                    MatDialogModule,
+                    MatTableModule,
+                    MatSortModule,
+                    MatPaginatorModule
                     ];
 
 @NgModule({
