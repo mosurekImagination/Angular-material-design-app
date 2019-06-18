@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TrainingService } from './trening.service';
-import { Subscription } from 'rxjs';
-import { Exercise } from './excercise.model';
+import { Subscription } from 'rxjs/Subscription';
+
+import { TrainingService } from './training.service';
 
 @Component({
   selector: 'app-training',
@@ -9,19 +9,26 @@ import { Exercise } from './excercise.model';
   styleUrls: ['./training.component.css']
 })
 export class TrainingComponent implements OnInit, OnDestroy {
-
   ongoingTraining = false;
-  exerciseChanged: Subscription;
-  constructor(private trainingService: TrainingService) { }
+  exerciseSubscription: Subscription;
+
+  constructor(private trainingService: TrainingService) {}
 
   ngOnInit() {
-    this.exerciseChanged = this.trainingService.exerciseChanged.subscribe((exercise: Exercise) => {
-      this.ongoingTraining = exercise ? true : false;
-      console.log(this.ongoingTraining);
-    });
+    this.exerciseSubscription = this.trainingService.exerciseChanged.subscribe(
+      exercise => {
+        if (exercise) {
+          this.ongoingTraining = true;
+        } else {
+          this.ongoingTraining = false;
+        }
+      }
+    );
   }
 
-  ngOnDestroy(): void {
-    this.exerciseChanged.unsubscribe();
+  ngOnDestroy() {
+    if (this.exerciseSubscription) {
+      this.exerciseSubscription.unsubscribe();
+    }
   }
 }

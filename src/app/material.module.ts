@@ -1,5 +1,29 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule,
+import {
+  MatButtonModule,
+  MatIconModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatCheckboxModule,
+  MatSidenavModule,
+  MatToolbarModule,
+  MatListModule,
+  MatTabsModule,
+  MatCardModule,
+  MatSelectModule,
+  MatProgressSpinnerModule,
+  MatDialogModule,
+  MatTableModule,
+  MatSortModule,
+  MatPaginatorModule,
+  MatSnackBarModule
+} from '@angular/material';
+
+@NgModule({
+  imports: [
+    MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
@@ -16,30 +40,29 @@ import { MatButtonModule,
     MatDialogModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule} from '@angular/material';
-
-const MAT_IMPORTS = [MatButtonModule,
-                    MatIconModule,
-                    MatFormFieldModule,
-                    MatInputModule,
-                    MatDatepickerModule,
-                    MatNativeDateModule,
-                    MatCheckboxModule,
-                    MatSidenavModule,
-                    MatToolbarModule,
-                    MatListModule,
-                    MatTabsModule,
-                    MatCardModule,
-                    MatSelectModule,
-                    MatProgressSpinnerModule,
-                    MatDialogModule,
-                    MatTableModule,
-                    MatSortModule,
-                    MatPaginatorModule
-                    ];
-
-@NgModule({
-    imports: MAT_IMPORTS,
-    exports: MAT_IMPORTS
+    MatPaginatorModule,
+    MatSnackBarModule
+  ],
+  exports: [
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatTabsModule,
+    MatCardModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatSnackBarModule
+  ]
 })
 export class MaterialModule {}
